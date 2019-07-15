@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE preferences SYSTEM "http://java.sun.com/dtd/preferences.dtd">
+<preferences EXTERNAL_XML_VERSION="1.0">
+  <root type="user">
+    <map>
+      <entry key="bg_color" value="#f8bbd0"/>
+      <entry key="font_color" value="#0d47a1"/>
+      <entry key="font_name" value="Courier New Bold"/>
+      <entry key="font_size" value="22.0"/>
+      <entry key="night_mode" value="false"/>
+      <entry key="warp_text" value="false"/>
+    </map>
+  </root>
+</preferences>

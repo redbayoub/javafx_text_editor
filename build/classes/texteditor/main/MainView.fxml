@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="texteditor.main.MainViewController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="openMenuItem" mnemonicParsing="false" onAction="#openF" text="Open" />
+                  <MenuItem fx:id="menuSave" mnemonicParsing="false" onAction="#save" text="Save" />
+                  <MenuItem fx:id="saveAsMenuItem" mnemonicParsing="false" onAction="#saveAs" text="Save as" />
+                  <MenuItem mnemonicParsing="false" onAction="#print" text="Print" />
+                  <MenuItem mnemonicParsing="false" onAction="#close" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#settings" text="Settings" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Search">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#find" text="Find" />
+                  <MenuItem mnemonicParsing="false" onAction="#replace" text="Replace" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#about" text="About" />
+               </items>
+            </Menu>
+        </menus>
+         <padding>
+            <Insets left="1.0" />
+         </padding>
+      </MenuBar>
+   </top>
+   <center>
+      <JFXTextArea fx:id="textView" onKeyTyped="#textChanged" BorderPane.alignment="CENTER" />
+   </center>
+   <bottom>
+      <VBox prefHeight="72.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #BABDB6;">
+               <children>
+                  <Label layoutX="39.0" layoutY="11.0" text="find :" />
+                  <JFXTextField fx:id="findWord" layoutX="81.0" layoutY="6.0" maxWidth="219.0" minWidth="219.0" prefHeight="32.0" prefWidth="219.0" />
+                  <JFXButton buttonType="RAISED" layoutX="399.0" layoutY="6.0" onAction="#pervFound" prefHeight="26.0" prefWidth="88.0" style="-fx-background-color: #4444ff; -fx-text-fill: #ffffff; -fx-border-color: #000000; -fx-background-radius: 20; -fx-border-radius: 20;" text="Pervious" />
+                  <JFXButton buttonType="RAISED" layoutX="503.0" layoutY="6.0" onAction="#nextFound" prefHeight="26.0" prefWidth="72.0" style="-fx-background-color: #4444ff; -fx-text-fill: #ffffff; -fx-border-color: #000000; -fx-background-radius: 20; -fx-border-radius: 20;" text="Next" />
+                  <Label layoutX="582.0" layoutY="6.0" onMousePressed="#closeFindView" text="X" />
+                  <Label fx:id="msg" layoutX="300.0" layoutY="12.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #BABDB6;">
+               <children>
+                  <Label layoutX="14.0" layoutY="10.0" text="Replace with :" />
+                  <JFXTextField fx:id="replaceByWord" layoutX="119.0" layoutY="2.0" prefWidth="181.0" />
+                  <JFXButton buttonType="RAISED" layoutX="300.0" layoutY="5.0" onAction="#replaceCurrent" prefHeight="26.0" prefWidth="129.0" style="-fx-background-color: #4444ff; -fx-text-fill: #ffffff; -fx-border-color: #000000; -fx-background-radius: 20; -fx-border-radius: 20;" text="Replace" />
+                  <JFXButton buttonType="RAISED" layoutX="442.0" layoutY="4.0" onAction="#repalceAll" prefHeight="26.0" prefWidth="129.0" style="-fx-background-color: #4444ff; -fx-text-fill: #ffffff; -fx-border-color: #000000; -fx-background-radius: 20; -fx-border-radius: 20;" text="Replace All" />
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </bottom>
+</BorderPane>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXColorPicker?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="256.0" prefWidth="344.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="texteditor.settings.SettingsFXMLController">
+   <children>
+      <HBox layoutY="216.0" prefHeight="46.0" prefWidth="371.0">
+         <children>
+            <JFXButton buttonType="RAISED" onAction="#saveAction" prefHeight="52.0" prefWidth="194.0" ripplerFill="#040965" style="-fx-background-color: #4444ff;" text="Save" textFill="WHITE" />
+            <JFXButton buttonType="RAISED" layoutX="10.0" layoutY="10.0" onAction="#cancelAction" prefHeight="52.0" prefWidth="194.0" ripplerFill="#040965" style="-fx-background-color: #4444ff;" text="Cancel" textFill="WHITE" />
+         </children>
+      </HBox>
+      <JFXButton fx:id="fontPicker" buttonType="RAISED" layoutX="185.0" layoutY="46.0" onAction="#pickFont" text=" " />
+      <Text layoutX="24.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Font Settings :" />
+      <Text layoutX="51.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Font Color :" />
+      <Separator layoutX="29.0" layoutY="131.0" prefHeight="2.0" prefWidth="313.0" />
+      <JFXCheckBox fx:id="textWarpSett" layoutX="53.0" layoutY="183.0" onAction="#wrapText" text="Enable text warping" />
+      <Text layoutX="29.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Genral Settings :" />
+      <JFXColorPicker fx:id="fontColorPicker" layoutX="199.0" layoutY="82.0" onAction="#changeFontColor" />
+      <Text layoutX="51.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose a font " />
+   </children>
+</AnchorPane>
